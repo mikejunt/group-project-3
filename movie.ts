@@ -12,9 +12,25 @@ submitbutton.addEventListener("click", function () {
             console.log(response)
             return response.json()
         })
-        .then (function (res){
+        .then(function (res) {
             console.log(res)
+            document.getElementById("moviedisplay").innerHTML = ""
+            if (res.Error == "Movie not found!") {
+                document.getElementById("moviedisplay").innerHTML = "No movies met that criteria."
+            }
+            else {
+                res.Search.forEach(element => {
+                    let div = document.createElement("div");
+                    div.classList.add("movie-data");
+                    div.innerText = `${element.Title} - ${element.Year}`;
+                    document.getElementById("moviedisplay").append(div);
+                    let poster = document.createElement("img");
+                    poster.classList.add("thumbnail-img");
+                    poster.src = element.Poster;
+                    div.prepend(poster);
+                });
+            }
         })
-        
+
 })
 

@@ -6,13 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    .movie-data {
+        background-color: black;
+        color: white;
+        height: 100px;
+        width: 75vw;
+        margin: 15px;
+    }
+    .thumbnail-img {
+        height: 75px;
+        width: auto;
+    }
+
+
+    
+    </style>
 </head>
 
 <body>
     <header>
         <h1>MOVIE QUERY</h1>
     </header>
-    <main>
+    <section>
         <form>
             <p><label for="search">Movie Name:</label><input type="search" value="" id="title"></p>
             <p><label for="type">All:</label><input type="radio" name="type" value="" id="all" checked></p>
@@ -115,8 +131,8 @@
                 </select></p>
         </form>
         <button id="submit">SUBMIT</button>
-
-    </main>
+    </section>
+    <section id="moviedisplay"></section>
 
 </body>
 <script src="./movie.js"></script>

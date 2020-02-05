@@ -12,5 +12,21 @@ submitbutton.addEventListener("click", function () {
     })
         .then(function (res) {
         console.log(res);
+        document.getElementById("moviedisplay").innerHTML = "";
+        if (res.Error == "Movie not found!") {
+            document.getElementById("moviedisplay").innerHTML = "No movies met that criteria.";
+        }
+        else {
+            res.Search.forEach(function (element) {
+                var div = document.createElement("div");
+                div.classList.add("movie-data");
+                div.innerText = element.Title + " - " + element.Year;
+                document.getElementById("moviedisplay").append(div);
+                var poster = document.createElement("img");
+                poster.classList.add("thumbnail-img");
+                poster.src = element.Poster;
+                div.prepend(poster);
+            });
+        }
     });
 });
