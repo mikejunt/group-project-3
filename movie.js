@@ -7,11 +7,9 @@ submitbutton.addEventListener("click", function () {
     console.log("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type);
     fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type)
         .then(function (response) {
-        console.log(response);
         return response.json();
     })
         .then(function (res) {
-        console.log(res);
         document.getElementById("moviedisplay").innerHTML = "";
         if (res.Error == "Movie not found!") {
             document.getElementById("moviedisplay").innerHTML = "No movies met that criteria.";
@@ -30,15 +28,12 @@ submitbutton.addEventListener("click", function () {
                 poster.src = element.Poster;
                 div.prepend(poster);
                 var imdbid = element.imdbID;
-                console.log(imdbid);
                 poster.addEventListener("click", function () {
                     fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=" + imdbid)
                         .then(function (clickresponse) {
-                        console.log(clickresponse);
                         return clickresponse.json();
                     })
                         .then(function (clickres) {
-                        console.log(clickres);
                         document.getElementById("moviedisplay").innerHTML = "";
                         if (clickres.Error == "Movie not found!") {
                             document.getElementById("moviedisplay").innerHTML = "No movies met that criteria.";
