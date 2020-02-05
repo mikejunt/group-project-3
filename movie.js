@@ -1,10 +1,16 @@
 // mike key 5907c09d
-console.log("THING");
 var submitbutton = document.getElementById("submit");
 submitbutton.addEventListener("click", function () {
-    console.log("attempting to create listener");
     var searchtext = document.getElementById("title")["value"];
-    // let typeselector: string = document.getElementsByName("type")["value"]
-    var yearselector = document.getElementById("year")["value"];
-    console.log("search string was " + searchtext + " and yearselector was " + yearselector);
+    var year = document.getElementById("year")["value"];
+    var type = document.querySelector('input[name=type]:checked')["value"];
+    console.log("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type);
+    fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type)
+        .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+        .then(function (res) {
+        console.log(res);
+    });
 });

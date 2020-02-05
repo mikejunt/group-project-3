@@ -15,11 +15,12 @@
     <main>
         <form>
             <p><label for="search">Movie Name:</label><input type="search" value="" id="title"></p>
+            <p><label for="type">All:</label><input type="radio" name="type" value="" id="all" checked></p>
             <p><label for="type">Movie:</label><input type="radio" name="type" value="movie" id="movie"></p>
             <p><label for="type">Series:</label><input type="radio" name="type" value="series" id="series"></p>
             <p><label for="type">Episode:</label><input type="radio" name="type" value="episode" id="episode"></p>
             <p><label for="year">Year:</label><select name="year" id="year">
-                    <option>- Year -</option>
+                    <option value="">- Year -</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
