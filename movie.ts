@@ -10,6 +10,7 @@ submitbutton.addEventListener("click", function () {
     console.log(`http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
     fetch(`http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
         .then(function (response) {
+            console.log(response);
             return response.json()
         })
         .then(function (res) {
@@ -18,7 +19,7 @@ submitbutton.addEventListener("click", function () {
                 document.getElementById("moviedisplay").innerHTML = "No movies met that criteria."
             }
             else if (res.Error == "Invalid API Key!") {
-                document.getElementById("moviedisplay").innerHTML = "No movies met that criteria."
+                document.getElementById("moviedisplay").innerHTML = "Search failure."
             }
             else {
                 res.Search.forEach(element => {
@@ -42,7 +43,7 @@ submitbutton.addEventListener("click", function () {
                                     document.getElementById("moviedisplay").innerHTML = "No movies met that criteria."
                                 }
                                 else if (clickres.Error == "Invalid API Key!") {
-                                    document.getElementById("moviedisplay").innerHTML = "No movies met that criteria."
+                                    document.getElementById("moviedisplay").innerHTML = "Search error."
                                 }
                                 else {
                                     document.getElementById("moviedisplay").innerHTML = `Director: ${clickres.Director}.  Plot summary: ${clickres.Plot}`
