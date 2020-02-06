@@ -11,12 +11,25 @@
         background-color: black;
         color: white;
         height: 100px;
-        width: 75vw;
+        flex-grow: 3;
         margin: 15px;
+        width: 75vw;
     }
     .thumbnail-img {
-        height: 75px;
+        height: 100px;
         width: auto;
+        float: left;
+        padding-right: 10px;
+    }
+    header {
+        text-align: center;
+    }
+    .search {
+        flex-grow: 1;
+    }
+    .flex-container{
+        display: flex;
+        flex-direction: row;
     }
 
 
@@ -28,7 +41,8 @@
     <header>
         <h1>MOVIE QUERY</h1>
     </header>
-    <section>
+    <div class="flex-container">
+    <section id="search">
         <form>
             <p><label for="search">Movie Name:</label><input type="search" value="" id="title"></p>
             <p><label for="type">All:</label><input type="radio" name="type" value="" id="all" checked></p>
@@ -133,7 +147,7 @@
         <button id="submit">SUBMIT</button>
     </section>
     <section id="moviedisplay"></section>
-
+</div>
 </body>
 <script src="./movie.js"></script>
 
