@@ -86,16 +86,17 @@ function drillclick(response, imdbid) {
 
 function drilltext(response) {
     let display = document.getElementById("moviedisplay");
+    display.style.minWidth = "630px"
     display.style.padding = "15px"
-    let head = document.createElement("h1");
-    head.innerText = `${response.Title}`
-    display.prepend(head);
     let poster = document.createElement("img")
     poster.classList.add("poster-img")
     poster.src = `${response.Poster}`
     display.append(poster);
+    let head = document.createElement("h1");
+    head.innerText = `${response.Title}`
+    display.prepend(head);
     let rating = document.createElement("p")
-    rating.innerText = `Rated: ${response.Rated}  Released on: ${response.Released}  ${response.Ratings.Value}`
+    rating.innerText = `Rated: ${response.Rated}  Released on: ${response.Released}`
     display.append(rating);
     let genre = document.createElement("p");
     genre.innerText = `${response.Runtime} length - ${response.Genre}`
