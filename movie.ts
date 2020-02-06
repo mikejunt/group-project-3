@@ -85,7 +85,41 @@ function drillclick(response, imdbid) {
 
 
 function drilltext(response) {
-    document.getElementById("moviedisplay").innerHTML = `Director: ${response.Director}.  Plot summary: ${response.Plot}`
+    let display = document.getElementById("moviedisplay");
+    display.style.minWidth = "630px"
+    display.style.padding = "15px"
+    let poster = document.createElement("img")
+    poster.classList.add("poster-img")
+    poster.src = `${response.Poster}`
+    display.append(poster);
+    let head = document.createElement("h1");
+    head.innerText = `${response.Title}`
+    display.prepend(head);
+    let rating = document.createElement("p")
+    rating.innerText = `Rated: ${response.Rated}  Released on: ${response.Released}`
+    display.append(rating);
+    let genre = document.createElement("p");
+    genre.innerText = `${response.Runtime} length - ${response.Genre}`
+    display.append(genre);
+    let director = document.createElement("p");
+    director.innerText = `Directed by: ${response.Director}`;
+    display.append(director)
+    let spacing = document.createElement("div")
+    spacing.style.height = "30px"
+    display.append(spacing);
+    let writer = document.createElement("p")
+    writer.innerText = `Written by: ${response.Writer}`
+    display.append(writer)
+    let cast = document.createElement("p")
+    cast.innerText = `Starring: ${response.Actors}`
+    display.append(cast);
+    let plot = document.createElement("div")
+    plot.innerText = `${response.Plot}`
+    plot.style.height = "50px";
+    display.append(plot);
+    let prod = document.createElement("p");
+    prod.innerText = `${response.Production} - Total Box Office: ${response.BoxOffice}`
+    display.append(prod);
 }
 
 

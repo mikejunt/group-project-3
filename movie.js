@@ -79,7 +79,41 @@ function drillclick(response, imdbid) {
     });
 }
 function drilltext(response) {
-    document.getElementById("moviedisplay").innerHTML = "Director: " + response.Director + ".  Plot summary: " + response.Plot;
+    var display = document.getElementById("moviedisplay");
+    display.style.minWidth = "630px";
+    display.style.padding = "15px";
+    var poster = document.createElement("img");
+    poster.classList.add("poster-img");
+    poster.src = "" + response.Poster;
+    display.append(poster);
+    var head = document.createElement("h1");
+    head.innerText = "" + response.Title;
+    display.prepend(head);
+    var rating = document.createElement("p");
+    rating.innerText = "Rated: " + response.Rated + "  Released on: " + response.Released;
+    display.append(rating);
+    var genre = document.createElement("p");
+    genre.innerText = response.Runtime + " length - " + response.Genre;
+    display.append(genre);
+    var director = document.createElement("p");
+    director.innerText = "Directed by: " + response.Director;
+    display.append(director);
+    var spacing = document.createElement("div");
+    spacing.style.height = "30px";
+    display.append(spacing);
+    var writer = document.createElement("p");
+    writer.innerText = "Written by: " + response.Writer;
+    display.append(writer);
+    var cast = document.createElement("p");
+    cast.innerText = "Starring: " + response.Actors;
+    display.append(cast);
+    var plot = document.createElement("div");
+    plot.innerText = "" + response.Plot;
+    plot.style.height = "50px";
+    display.append(plot);
+    var prod = document.createElement("p");
+    prod.innerText = response.Production + " - Total Box Office: " + response.BoxOffice;
+    display.append(prod);
 }
 submitbutton.addEventListener("click", function () {
     searchstart();
