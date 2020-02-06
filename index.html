@@ -14,11 +14,14 @@
         flex-grow: 3;
         margin: 15px;
         width: 75vw;
+        border: solid red;
     }
     .thumbnail-img {
-        width: 75px;
+        height: 100px;
         float: left;
         padding-right: 10px;
+        clear: right;
+        
     }
     header {
         text-align: center;
@@ -30,13 +33,17 @@
         display: flex;
         flex-direction: row;
     }
-    .scale:hover{
-            -ms-transform: scale(1.5,2);
-            -webkit-transform: scale(1.5,2);
-            transform: scale(1.5,2);
+    .thumbnail-img:hover{
+            -ms-transform: scale(1.25,1.25);
+            -webkit-transform: scale(1.25,1.25);
+            transform: scale(1.25,1.25);
         }
     .moviedisplay{
-        height: auto;
+    }
+    poster-img{
+        width: 120px;
+        height: 200px;
+        float left;
     }
 
 
