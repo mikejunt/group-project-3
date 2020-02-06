@@ -43,6 +43,8 @@ function searchstart() {
     }
 }
 function searchresulttext(response) {
+    document.getElementById("moviedisplay").classList.add("off-screen");
+    document.getElementById("moviedisplay").classList.add("search-trans");
     response.Search.forEach(function (element) {
         var div = document.createElement("div");
         div.classList.add("movie-data");
@@ -58,9 +60,12 @@ function searchresulttext(response) {
             drillclick(response, this.id);
         });
     });
+    window.setTimeout(function () {
+        document.getElementById("moviedisplay").classList.remove("off-screen");
+    }, 500);
 }
 function drillclick(response, imdbid) {
-    console.log(imdbid);
+    document.getElementById("moviedisplay").classList.remove("search-trans");
     fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=" + imdbid)
         .then(function (response) {
         return response.json();
