@@ -7,47 +7,72 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    .movie-data {
-        background-color: black;
-        color: white;
-        height: 100px;
-        flex-grow: 3;
-        margin: 15px;
-        width: 75vw;
-        border: solid red;
-    }
-    .thumbnail-img {
-        height: 100px;
-        float: left;
-        padding-right: 10px;
-        clear: right;
-        
-    }
-    header {
-        text-align: center;
-    }
-    .search {
-        flex-grow: 1;
-    }
-    .flex-container{
-        display: flex;
-        flex-direction: row;
-    }
-    .thumbnail-img:hover{
-            -ms-transform: scale(1.25,1.25);
-            -webkit-transform: scale(1.25,1.25);
-            transform: scale(1.25,1.25);
+        .movie-data {
+            background-color: black;
+            color: white;
+            height: 100px;
+            flex-grow: 3;
+            margin: 15px;
+            width: 75vw;
+            border: solid #CC0000;
         }
-    .moviedisplay{
-    }
-    poster-img{
-        width: 120px;
-        height: 200px;
-        float: left;
-    }
 
+        .thumbnail-img {
+            height: 100px;
+            float: left;
+            padding-right: 10px;
+            clear: right;
 
-    
+        }
+
+        body {
+            background-color: black;
+        }
+
+        header {
+            text-align: center;
+            color: yellow;
+        }
+
+        .search {
+            flex-grow: 1;
+
+        }
+
+        .search-menu {
+            color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            border: solid #6600CC
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .thumbnail-img:hover {
+            -ms-transform: scale(1.25, 1.25);
+            -webkit-transform: scale(1.25, 1.25);
+            transform: scale(1.25, 1.25);
+        }
+
+        .moviedisplay {
+            
+        }
+
+        .movie-content{
+            border-top: solid #6600CC;
+            border-right: solid #6600CC;
+            border-bottom: solid #6600CC;
+        }
+
+        .poster-img {
+            width: 120px;
+            height: 200px;
+            float: left;
+        }
     </style>
 </head>
 
@@ -56,7 +81,7 @@
         <h1>MOVIE QUERY</h1>
     </header>
     <div class="flex-container">
-    <section id="search">
+        <section class="search-menu" id="search">
             <p><label for="search">Movie Name:</label><input type="search" value="" id="title"></p>
             <p><label for="type">All:</label><input type="radio" name="type" value="" id="all" checked></p>
             <p><label for="type">Movie:</label><input type="radio" name="type" value="movie" id="movie"></p>
@@ -156,10 +181,10 @@
                     <option value="1931">1931</option>
                     <option value="1930">1930</option>
                 </select></p>
-        <button id="submit">SUBMIT</button>
-    </section>
-    <section id="moviedisplay"></section>
-</div>
+            <button id="submit">SUBMIT</button>
+        </section>
+        <section class="movie-content" id="moviedisplay"></section>
+    </div>
 </body>
 <script src="./movie.js"></script>
 
