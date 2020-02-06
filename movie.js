@@ -80,6 +80,7 @@ function drillclick(response, imdbid) {
 }
 function drilltext(response) {
     var display = document.getElementById("moviedisplay");
+    display.classList.add("fade");
     display.style.minWidth = "630px";
     display.style.padding = "15px";
     var poster = document.createElement("img");
@@ -114,6 +115,10 @@ function drilltext(response) {
     var prod = document.createElement("p");
     prod.innerText = response.Production + " - Total Box Office: " + response.BoxOffice;
     display.append(prod);
+    window.setTimeout(function () {
+        display.classList.add("fade-trans");
+        display.classList.remove("fade");
+    }, 1);
 }
 submitbutton.addEventListener("click", function () {
     searchstart();

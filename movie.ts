@@ -86,6 +86,7 @@ function drillclick(response, imdbid) {
 
 function drilltext(response) {
     let display = document.getElementById("moviedisplay");
+    display.classList.add("fade");
     display.style.minWidth = "630px"
     display.style.padding = "15px"
     let poster = document.createElement("img")
@@ -120,6 +121,10 @@ function drilltext(response) {
     let prod = document.createElement("p");
     prod.innerText = `${response.Production} - Total Box Office: ${response.BoxOffice}`
     display.append(prod);
+    window.setTimeout(function() {
+        display.classList.add("fade-trans") 
+        display.classList.remove("fade")
+    }, 1);
 }
 
 
