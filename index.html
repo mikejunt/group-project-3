@@ -16,8 +16,7 @@
         width: 75vw;
     }
     .thumbnail-img {
-        height: 100px;
-        width: auto;
+        width: 75px;
         float: left;
         padding-right: 10px;
     }
@@ -31,6 +30,14 @@
         display: flex;
         flex-direction: row;
     }
+    .scale:hover{
+            -ms-transform: scale(1.5,2);
+            -webkit-transform: scale(1.5,2);
+            transform: scale(1.5,2);
+        }
+    .moviedisplay{
+        height: auto;
+    }
 
 
     
@@ -43,7 +50,6 @@
     </header>
     <div class="flex-container">
     <section id="search">
-        <form>
             <p><label for="search">Movie Name:</label><input type="search" value="" id="title"></p>
             <p><label for="type">All:</label><input type="radio" name="type" value="" id="all" checked></p>
             <p><label for="type">Movie:</label><input type="radio" name="type" value="movie" id="movie"></p>
@@ -143,7 +149,6 @@
                     <option value="1931">1931</option>
                     <option value="1930">1930</option>
                 </select></p>
-        </form>
         <button id="submit">SUBMIT</button>
     </section>
     <section id="moviedisplay"></section>
