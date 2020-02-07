@@ -1,4 +1,3 @@
-// mike key 5907c09d
 var submitbutton = document.getElementById("submit");
 var searchbar = document.getElementById("title");
 function searchstart() {

@@ -1,5 +1,3 @@
-// mike key 5907c09d
-
 let submitbutton: HTMLElement = document.getElementById("submit");
 let searchbar = document.getElementById("title");
 
