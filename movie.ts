@@ -9,9 +9,9 @@ function searchstart() {
     else {
         let year: string = document.getElementById("year")["value"];
         let type: string = document.querySelector('input[name=type]:checked')["value"];
-        console.log(`http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
+        console.log(`https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
         let proceed: boolean;
-        fetch(`http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
+        fetch(`https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
             .then(function (response) {
                 if (response.status == 200) {
                     proceed = true;
@@ -68,7 +68,7 @@ function searchresulttext(response) {
 
 function drillclick(response, imdbid) {
     document.getElementById("moviedisplay").classList.remove("search-trans");
-    fetch(`http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=${imdbid}`)
+    fetch(`https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=${imdbid}`)
         .then(function (response) {
             return response.json()
         })
