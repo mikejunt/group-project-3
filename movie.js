@@ -8,18 +8,15 @@ function searchstart() {
     else {
         var year = document.getElementById("year")["value"];
         var type = document.querySelector('input[name=type]:checked')["value"];
-        console.log("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type);
         var proceed_1;
-        fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type)
+        fetch("https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=" + searchtext + "&y=" + year + "&type=" + type)
             .then(function (response) {
             if (response.status == 200) {
                 proceed_1 = true;
-                console.log(proceed_1);
                 return response.json();
             }
             else {
                 proceed_1 = false;
-                console.log(proceed_1);
             }
         })
             .then(function (res) {
@@ -53,7 +50,6 @@ function searchresulttext(response) {
         poster.classList.add("thumbnail-img");
         poster.src = element.Poster;
         poster.id = "" + element.imdbID;
-        console.log(poster.id);
         div.prepend(poster);
         poster.addEventListener("click", function () {
             drillclick(response, this.id);
@@ -65,7 +61,7 @@ function searchresulttext(response) {
 }
 function drillclick(response, imdbid) {
     document.getElementById("moviedisplay").classList.remove("search-trans");
-    fetch("http://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=" + imdbid)
+    fetch("https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&i=" + imdbid)
         .then(function (response) {
         return response.json();
     })

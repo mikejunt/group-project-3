@@ -9,18 +9,15 @@ function searchstart() {
     else {
         let year: string = document.getElementById("year")["value"];
         let type: string = document.querySelector('input[name=type]:checked')["value"];
-        console.log(`https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
-        let proceed: boolean;
+       let proceed: boolean;
         fetch(`https://www.omdbapi.com/?apikey=5907c09d&r=JSON&page=1&s=${searchtext}&y=${year}&type=${type}`)
             .then(function (response) {
                 if (response.status == 200) {
                     proceed = true;
-                    console.log(proceed)
                     return response.json()
                 }
                 else {
                     proceed = false;
-                    console.log(proceed)
                 }
             })
             .then(function (res) {
@@ -55,7 +52,6 @@ function searchresulttext(response) {
         poster.classList.add("thumbnail-img");
         poster.src = element.Poster;
         poster.id = `${element.imdbID}`;
-        console.log(poster.id)
         div.prepend(poster);
         poster.addEventListener("click", function () {
             drillclick(response, this.id)
